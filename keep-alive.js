@@ -1,4 +1,6 @@
 const https = require('https');
+const http = require('http');
+const PORT = process.env.PORT || 3000;
 
 const AUTH_URL = 'https://schedule-management-authentication.onrender.com/api/v1/user/doctors';
 const BACKEND_URL = "https://schedule-management-api.onrender.com/patient/getAllPatient/One%20Dentistry";
@@ -27,6 +29,15 @@ function keepAliveBackend() {
       console.error('Error pinging server:', err);
     });
   }
+
+  const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Keep-alive server is running');
+  });
+
+  server.listen(PORT, () => {
+    console.log(`Keep-alive server is running on port ${PORT}`);
+  });
 
 // Run the keep-alive function immediately and then every INTERVAL
 keepAliveBackend();

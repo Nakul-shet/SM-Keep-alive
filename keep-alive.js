@@ -1,7 +1,7 @@
 const https = require('https');
 
-const AUTH_URL = 'https://schedule-management-authentication.onrender.com';
-const BACKEND_URL = "https://schedule-management-api.onrender.com";
+const AUTH_URL = 'https://schedule-management-authentication.onrender.com/api/v1/user/doctors';
+const BACKEND_URL = "https://schedule-management-api.onrender.com/patient/getAllPatient/One%20Dentistry";
 const INTERVAL = 14 * 60 * 1000; // 14 minutes in milliseconds
 
 function keepAliveAuth() {

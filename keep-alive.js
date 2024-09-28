@@ -31,6 +31,7 @@ function keepAliveBackend() {
 // Run the keep-alive function immediately and then every INTERVAL
 keepAliveBackend();
 keepAliveAuth();
-setInterval(keepAlive, INTERVAL);
+setInterval(keepAliveBackend, INTERVAL);
+setInterval(keepAliveAuth, INTERVAL);
 
 console.log('Keep-alive script is running...');
